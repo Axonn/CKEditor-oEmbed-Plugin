@@ -10,7 +10,7 @@
     function repairHtmlOutput(provider, oldOutput, width, height) {
         switch (provider) {
             case "SlideShare":
-                return oldOutput.replace(/width=\"\d+\" height=\"\d+\"/, "width=\"" + width + "\" height=\"" + height + "\"");
+                return oldOutput.replace(/width=\"\d+\" height=\"\d+\"/, "width=\"" + width + "\" height=\"" + height + "\"").replace(/http:/, "https:");
             case "Spotify":
                 return oldOutput.replace(/width=\"\d+\" height=\"\d+\"/, "width=\"" + width + "\" height=\"" + height + "\"");
             default:
@@ -200,18 +200,18 @@
             // Note: x corresponds to moveOffset, this is the position of mouse
             // Note: o corresponds to [startX, startY].
             //
-            // 	+--------------+--------------+
-            // 	|              |              |
-            // 	|      I       |      II      |
-            // 	|              |              |
-            // 	+------------- o -------------+ _ _ _
-            // 	|              |              |      ^
-            // 	|      VI      |     III      |      | moveDiffY
-            // 	|              |         x _ _ _ _ _ v
-            // 	+--------------+---------|----+
-            // 	               |         |
-            // 	                <------->
-            // 	                moveDiffX
+            //  +--------------+--------------+
+            //  |              |              |
+            //  |      I       |      II      |
+            //  |              |              |
+            //  +------------- o -------------+ _ _ _
+            //  |              |              |      ^
+            //  |      VI      |     III      |      | moveDiffY
+            //  |              |         x _ _ _ _ _ v
+            //  +--------------+---------|----+
+            //                 |         |
+            //                  <------->
+            //                  moveDiffX
             function onMouseMove(evt) {
                 nativeEvt = evt.data.$;
 
@@ -326,12 +326,12 @@
 
                     '}' +
 
-			'.cke-oembed-resize-box{' +
-				// This is to remove unwanted space so resize
-				// wrapper is displayed property.
-				'background:#999;' +
+            '.cke-oembed-resize-box{' +
+                // This is to remove unwanted space so resize
+                // wrapper is displayed property.
+                'background:#999;' +
                 'display:inline-block;' +
-			'}');
+            '}');
         },
         init: function (editor) {
             // Load jquery?
