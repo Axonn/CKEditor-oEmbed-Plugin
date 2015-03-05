@@ -395,7 +395,10 @@
                     return element.name == 'div' && element.hasClass(editor.config.oembed_WrapperClass != null ? editor.config.oembed_WrapperClass : "embeddedContent");
                 },
                 downcast: function (element) {
-                    element.getFirst('span').remove();
+                    var innerSpan = element.getFirst('span');
+                    if (innerSpan) {
+                        innerSpan.remove();
+                    }
 
                     //if (element.children) {
                     //    this.element.$.removeChild(this.element.$.lastChild);
