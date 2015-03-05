@@ -113,8 +113,6 @@
             resizer = widget.resizer = doc.createElement('span');
 
         resizer.addClass('cke_image_resizer');
-        resizer.append(new CKEDITOR.dom.text('\u200b', doc));
-
 
         widget.element.append(resizer);
 
@@ -459,7 +457,7 @@
 
             function loadjQueryLibaries() {
                 if (typeof (jQuery) === 'undefined') {
-                    CKEDITOR.scriptLoader.load('http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js', function () {
+                        CKEDITOR.scriptLoader.load('https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js', function() {
                         jQuery.noConflict();
                         if (typeof (jQuery.fn.oembed) === 'undefined') {
                             CKEDITOR.scriptLoader.load(
