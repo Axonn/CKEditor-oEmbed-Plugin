@@ -3,6 +3,7 @@
 * Licensed under the MIT license
 * jQuery Embed Plugin: http://code.google.com/p/jquery-oembed/ (MIT License)
 * Plugin for: http://ckeditor.com/license (GPL/LGPL/MPL: http://ckeditor.com/license)
+* AGORAA DEVS note: added a afterEmbed function to trigger ckeditor change event to update angular model. BUG#4761
 */
 
 (function () {
@@ -199,6 +200,9 @@
                             alert(editor.lang.oembed.Error);
                         }
 
+                    },
+                    afterEmbed: function() {
+                        editor.fire('change');
                     },
                     maxHeight: maxHeight,
                     maxWidth: maxWidth,
