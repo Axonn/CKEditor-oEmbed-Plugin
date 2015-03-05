@@ -128,8 +128,8 @@
                 startY = parseInt(evt.data.$.screenY),
 
                 // The initial dimensions and aspect ratio of the image.
-                startWidth = parseInt(widget.element.data('MaxWidth')),
-                startHeight = parseInt(widget.element.data('MaxHeight')),
+                startWidth = parseInt(widget.element.data('MaxWidth')) || widget.element.$.clientWidth,
+                startHeight = parseInt(widget.element.data('MaxHeight')) || widget.element.$.clientHeight,
                 ratio = startWidth / startHeight,
 
                 listeners = [],
