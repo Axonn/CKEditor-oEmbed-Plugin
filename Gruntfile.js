@@ -9,6 +9,5 @@ module.exports = function(grunt) {
             }
           }
     });
-    grunt.registerTask('default', ['shell', 'concat', 'copy']);
-    grunt.registerTask('build', ['default']);
+    grunt.registerTask('default', ['release']);
 }
