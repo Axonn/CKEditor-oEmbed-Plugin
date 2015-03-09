@@ -75,6 +75,9 @@
                                 alert(editor.lang.oembed.Error);
                             }
                         },
+                        afterEmbed: function() {
+                            editor.fire('change');
+                        },
                         maxHeight: maxHeight,
                         maxWidth: maxWidth,
                         useResponsiveResize: responsiveResize,
