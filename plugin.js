@@ -48,7 +48,7 @@
                                 if (widget.element.$.firstChild) {
                                     widget.element.$.removeChild(widget.element.$.firstChild);
                                 }
-                                widget.element.appendHtml(e.code);
+                                widget.element.appendHtml(repairHtmlOutput(provider.name, e.code, maxWidth, maxHeight));
                                 widget.element.data('oembed', url);
                                 widget.element.data('oembed_provider', provider.name);
                                 widget.element.addClass('oembed-provider-' + provider.name);
@@ -57,7 +57,7 @@
                                 if (widget.element.$.firstChild) {
                                     widget.element.$.removeChild(widget.element.$.firstChild);
                                 }
-                                widget.element.appendHtml(e.code[0].outerHTML);
+                                widget.element.appendHtml(repairHtmlOutput(provider.name, e.code[0].outerHTML, maxWidth, maxHeight));
                                 widget.element.data('oembed', url);
                                 widget.element.data('oembed_provider', provider.name);
                                 widget.element.addClass('oembed-provider-' + provider.name);
