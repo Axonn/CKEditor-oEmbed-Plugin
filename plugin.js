@@ -45,7 +45,7 @@
                             }
 
                             if (typeof e.code === 'string') {
-                                if (widget.element.$.firstChild) {
+                                while (widget.element.$.firstChild) {
                                     widget.element.$.removeChild(widget.element.$.firstChild);
                                 }
                                 widget.element.appendHtml(repairHtmlOutput(provider.name, e.code, maxWidth, maxHeight));
@@ -54,7 +54,7 @@
                                 widget.element.addClass('oembed-provider-' + provider.name);
                                 elementAdded = true;
                             } else if (typeof e.code[0].outerHTML === 'string') {
-                                if (widget.element.$.firstChild) {
+                                while (widget.element.$.firstChild) {
                                     widget.element.$.removeChild(widget.element.$.firstChild);
                                 }
                                 widget.element.appendHtml(repairHtmlOutput(provider.name, e.code[0].outerHTML, maxWidth, maxHeight));
