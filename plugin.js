@@ -8,10 +8,10 @@
 
 (function() {
     function repairHtmlOutput(provider, oldOutput, width, height) {
-        switch (provider) {
-            case "SlideShare":
+        switch (provider.toLowerCase()) {
+            case "slideshare":
                 return oldOutput.replace(/width=\"\d+\" height=\"\d+\"/, "width=\"" + width + "\" height=\"" + height + "\"").replace(/http:/, "https:");
-            case "Spotify":
+            case "spotify":
                 return oldOutput.replace(/width=\"\d+\" height=\"\d+\"/, "width=\"" + width + "\" height=\"" + height + "\"");
             default:
                 return oldOutput;
